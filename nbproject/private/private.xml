@@ -5,10 +5,7 @@
         <group>
             <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/controller/ControllerBAss.java</file>
             <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/view/ViewBass.java</file>
-            <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/model/ModelBass.java</file>
-            <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/bass.java</file>
             <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/dao/bassDAO.java</file>
-            <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/model/tablesBass.java</file>
             <file>file:/C:/Users/ELITEBOOK/Documents/NetBeansProjects/databass/src/bass/dao/BassDAOimpl.java</file>
         </group>
     </open-files>

@@ -43,7 +43,7 @@ public class BassDAOimpl implements bassDAO{
                 data.setNama(rs.getString("Nama"));
                 data.setWarna(rs.getString("warna"));
                 data.setjmlSenar(rs.getInt("Jml_Senar"));
-                
+                basses.add(data);
             }
         } catch (SQLException ex) {
             Logger.getLogger(BassDAOimpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,7 +55,7 @@ public class BassDAOimpl implements bassDAO{
     @Override
     public List<ModelBass> getSearchbyName(String nama) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     }
 
     @Override
     public void addBass(ModelBass addData) {
@@ -81,13 +81,50 @@ public class BassDAOimpl implements bassDAO{
     }
 
     @Override
-    public void deleteBass(ModelBass dltData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteBass(int id){
+        // new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement = null;
+        String sql="DELETE FROM bass where id=?; ";
+        try {
+            statement = connect.prepareStatement(sql);
+
+            statement.setInt(1, id);
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     @Override
     public void updateBass(ModelBass updData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement = null;
+        try {
+            String sql = "UPDATE bass set ID=?, Nama=?, Warna=?, Jml_Senar=? where ID=?;";
+            statement = connect.prepareStatement(sql);
+            statement.setInt(1,updData.getID());
+            statement.setString(2, updData.getNama());
+            statement.setString(3, updData.getwarna());
+            statement.setInt(4, updData.getjmlSenar());
+            statement.setInt(5, updData.getID());
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
     
     

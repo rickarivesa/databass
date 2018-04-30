@@ -16,6 +16,6 @@ public interface bassDAO {
     public List<ModelBass> getAllBass();
     public List<ModelBass> getSearchbyName (String nama);
     public void addBass(ModelBass addData);
-    public void deleteBass(ModelBass dltData);
+    public void deleteBass(int id);
     public void updateBass(ModelBass updData);
 }
